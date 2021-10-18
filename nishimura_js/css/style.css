@@ -1,0 +1,370 @@
+@charset "utf-8";
+
+/* トップの設定 */
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Roboto:ital@1&display=swap");
+body {
+  font-family: "Baskervville", serif, "游ゴシック体", YuGothic,
+    "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic",
+    "メイリオ", sans-serif;
+  background: #f0f0f0;
+}
+/* ＝＝＝＝割れる画面＝＝＝＝＝ */
+#splash {
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+#splash_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  width: 100%;
+}
+.loader_cover {
+  width: 100%;
+  height: 50%;
+  background-color: #ffa5d2;
+  transition: all 0.2s cubic-bezier(0.04, 0.435, 0.315, 0.9);
+  transform: scaleY(1);
+}
+.loader_cover-up {
+  transform-origin: center top;
+}
+.loader_cover-down {
+  position: absolute;
+  bottom: 0;
+  transform-origin: center bottom; /* 変形の原点 */
+}
+/* クラスが付いたらy軸に０ */
+.coveranime {
+  transform: scaleY(0);
+}
+
+#header {
+  width: 100%;
+  height: 100vh;
+}
+#slider {
+  background-size: cover;
+  background-position: center;
+}
+/* header-text */
+.heading-block {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: #fff;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  line-height: 1.1;
+}
+.shopsub {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 30px;
+  letter-spacing: 0.2rem;
+  font-family: "Baskervville", serif;
+}
+.shopmain-anime {
+  font-size: 110px;
+  margin-top: 0;
+  letter-spacing: 1rem;
+  font-family: "Baskervville", serif;
+}
+.shopmain-anime {
+  animation-duration: 1s;
+}
+
+.box {
+  /* padding: 40px; */
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+/* ＝＝＝スクロールダウン＝＝＝ */
+.scrolldown {
+  position: absolute;
+  bottom: 10px;
+  right: 7%;
+}
+.scrolldown span {
+  position: absolute;
+  left: 1px;
+  bottom: 10px;
+  font-size: 1.25rem;
+  letter-spacing: 0.05rem;
+  color: #eee;
+  -ms-writing-mode: tb-rl; /* 縦向き表示 */
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+} /* 丸の描写 */
+.scrolldown::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #eee;
+  animation: circlemove 1.6s ease-in-out infinite,
+    circlemovehide 1.6s ease-out infinite;
+}
+/* ＝＝＝上下の動きの幅＝＝＝ */
+@keyframes circlemove {
+  0% {
+    bottom: 70px;
+  }
+  100% {
+    bottom: -1px;
+  }
+}
+@keyframes circlehide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+} /* 縦線の描写 */
+.scrolldown::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 2px;
+  height: 80px;
+  background: #eee;
+}
+/* =======セクション１======= */
+#box-1 {
+  position: relative;
+  background: url(/image/bg-img4.jpg) no-repeat center;
+  background-size: cover;
+}
+/* ボタンのグラデーション */
+.box-area1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bouquet {
+  color: #fff;
+  letter-spacing: 0.2rem;
+  font-size: 60px;
+  font-family: "Baskervville", serif;
+  margin: 0;
+}
+.gradient,
+.gradient2 {
+  font-size: 18px;
+  margin-top: 20px;
+  display: flex;
+  display: inline-block;
+  padding: 16px 60px;
+  border-radius: 30px; /* 丸みを持たせる */
+  text-decoration: none;
+  border: 2px solid #fff;
+  color: #000;
+  outline: none; /* 青の枠線を消す */
+  /* アニメーション設定 */
+  transition: all 0.4s ease-out;
+}
+.gradient2:hover,
+.gradient:hover {
+  border-color: transparent;
+  color: #fff;
+  /* グラデーション色 */
+  background: linear-gradient(270deg, #fa6c9f 0%, #ffe140 50%, #ff357f 100%);
+  background-size: 200% auto;
+  background-position: right center;
+  /* 影 */
+  box-shadow: 0 5px 10px rgba(250, 108, 159, 0.4);
+}
+
+/* セクション２ */
+#box-2 {
+  background: url(/image/bg-img2.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+.box-area2 {
+  position: absolute;
+}
+
+.contact-blur {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  padding: 40px 10px 0 10px;
+  margin: 100px 0 0 40px; /* 位置調整 */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.contact-blur {
+  text-align: center;
+  color: #333;
+}
+.contact-blur p {
+  font-size: 35px;
+}
+.contact-blur h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  line-height: 3rem;
+}
+.contact-blur dt {
+  float: left;
+  width: 30%;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.contact-blur dd {
+  float: right;
+  width: 70%;
+  font-size: 16px;
+}
+
+.box-area2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.contact {
+  margin: 0;
+  font-size: 60px;
+  letter-spacing: 0.2rem;
+  color: #fff;
+}
+
+/* sns icon */
+#sns-icon img {
+  width: 30px;
+}
+#sns-icon {
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  list-style-type: none;
+  right: 25px;
+  top: 10px;
+}
+#sns-icon li {
+  margin: 0 8px;
+}
+#sns-icon a {
+  transition: all 5s;
+}
+#sns-icon a:hover {
+  opacity: 0.8; /* 徐々に暗くなる */
+}
+/* ========form-area====== */
+.form-list {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  list-style-type: none;
+}
+#form h3 {
+  text-align: center;
+
+  padding: 10px;
+  margin: 10px;
+  font-size: 35px;
+}
+.modaal-content-container {
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+.form-list input[type="text"],
+.form-list input[type="email"],
+.form-list textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #f8f9fa;
+  padding: 10px;
+}
+
+.form-list input[type="text"],
+input[type="email"] {
+  height: 50px;
+}
+
+.submit-btn {
+  width: 152px;
+  margin: auto;
+}
+input[type="submit"] {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 20px;
+  width: 152px;
+  margin: 0 auto;
+}
+input[type="submit"]:hover {
+  background: #555;
+}
+.form-list dl {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 0 20px 0;
+}
+.form-list dt {
+  width: 30%;
+}
+.form-list dd {
+  width: 66%;
+}
+.form-list textarea {
+  height: 200px;
+  resize: none;
+}
+/* コンタクトアリアはあらかじめ隠す */
+.hide-area {
+  display: none;
+}
+/* ✖表示 */
+.modaal-close:after,
+.modaal-close:before {
+  background: #ccc;
+}
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before {
+  background: #666; /* ✖ボタンの色 */
+}
+/* footer */
+small {
+  font-size: 15px;
+  color: #fff;
+  position: fixed;
+  left: 20px;
+  top: 40%;
+  /* color: ; */
+  letter-spacing: 0.1rem;
+  line-height: 1;
+  writing-mode: vertical-rl;
+}
+/* =====@media====== */
+@media screen and (max-width: 768px) {
+  .box #box1 {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Roboto:ital@1&display=swap");
+
+body {
+  font-family: "Baskervville", serif, "游ゴシック体", YuGothic,
+    "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic",
+    "メイリオ", sans-serif;
+  background: #f0f0f0;
+  font-size: 1rem;
+  line-height: 1.85;
+  word-wrap: break-word;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10%;
+}
+* {
+  box-sizing: border-box;
+}
+#g-nav {
+  animation-delay: 0.3s;
+  position: relative;
+}
+#g-nav ul li a:hover {
+  color: #b25938;
+}
+#g-nav ul li a::after {
+  content: "/";
+  padding: 0 10px 0 20px;
+}
+#g-nav ul ul li a::after {
+  content: "";
+  padding: 0;
+}
+.head-logo p,
+.head-logo h1 {
+  font-family: "Baskervville", serif;
+}
+@media screen and (max-width: 768px) {
+  #g-nav ul ul li a::after {
+    content: "";
+    padding: 0;
+  }
+  #g-nav ul li a:hover {
+    color: #fff;
+  }
+}
